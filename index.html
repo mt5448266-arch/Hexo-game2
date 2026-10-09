@@ -56,5 +56,60 @@ footer{text-align:center;padding:25px 15px;color:#6e687e;font-size:11px;border-t
 </section>
 <footer>HEXO GAME © 2026 · SANAL PUANLI OYUN PLATFORMU</footer>
 <script src="games.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL = "https://lqhgbiuztpnmegxantid.supabase.co";
+const SUPABASE_KEY = "sb_publishable_X-mly1tbRtXXYrguti9lZA_lJ4x_nsw";
+const supabaseClient = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
+function hexoAuth() {
+  const choice = prompt(
+    "💜 HEXO GAME\n\n1 - Giriş Yap\n2 - Üye Ol"
+  );
+  if (choice !== "1" && choice !== "2") return;
+  const email = prompt("E-posta adresini gir:");
+  if (!email) return;
+  const password = prompt("Şifreni gir (en az 6 karakter):");
+  if (!password) return;
+  if (password.length < 6) {
+    alert("Şifre en az 6 karakter olmalı!");
+    return;
+  }
+  const request = choice === "1"
+    ? supabaseClient.auth.signInWithPassword({
+        email: email,
+        password: password
+      })
+    : supabaseClient.auth.signUp({
+        email: email,
+        password: password
+      });
+  request.then(({ data, error }) => {
+    if (error) {
+      alert("Hata: " + error.message);
+      return;
+    }
+    if (choice === "2" && !data.session) {
+      alert("Üyelik oluşturuldu! E-postanı doğrulaman gerekebilir.");
+      return;
+    }
+    alert("HEXO GAME'e hoş geldin! 💜");
+    location.reload();
+  });
+}
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("button, a").forEach((element) => {
+    if (element.textContent.trim().toLowerCase() === "login") {
+      element.removeAttribute("onclick");
+      element.addEventListener("click", (event) => {
+        event.preventDefault();
+        hexoAuth();
+      });
+    }
+  });
+});
+</script>
 </body>
 </html>
