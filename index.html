@@ -1,1 +1,56 @@
-
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090914">
+<title>HEXO GAME | Oyun Dünyası</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#090914;color:#fff;font-family:Arial,sans-serif;min-height:100vh}
+header{padding:22px 18px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #282044}
+.logo{font-size:24px;font-weight:900;letter-spacing:3px;color:#bd8aff}
+.login{border:1px solid #9a57ff;color:#fff;padding:10px 15px;border-radius:10px;background:#171026}
+.hero{text-align:center;padding:48px 20px 35px}
+.tag{color:#c19aff;font-size:12px;letter-spacing:3px;margin-bottom:18px}
+h1{font-size:38px;line-height:1.15;margin-bottom:15px}
+h1 span{color:#b77aff}
+.hero p{color:#aaa8bd;font-size:14px;line-height:1.7;max-width:330px;margin:auto}
+.button{display:inline-block;margin-top:24px;padding:14px 23px;border-radius:12px;background:linear-gradient(100deg,#793cff,#bd55ff);color:white;text-decoration:none;font-weight:bold;box-shadow:0 0 25px #853aff33}
+.section{padding:20px 17px 35px;max-width:850px;margin:auto}
+.heading{font-size:21px;margin-bottom:17px}
+.heading span{color:#b77aff}
+.games{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.card{background:linear-gradient(145deg,#19152a,#100f1c);border:1px solid #302346;border-radius:17px;padding:20px 15px;min-height:145px}
+.icon{font-size:35px;margin-bottom:15px}
+.card h3{font-size:17px;margin-bottom:7px}
+.card p{font-size:12px;color:#aaa5bc}
+.badge{display:inline-block;margin-top:13px;font-size:10px;color:#d6baff;background:#35204c;padding:6px 9px;border-radius:7px}
+.notice{margin-top:20px;padding:15px;border:1px solid #34264a;border-radius:12px;color:#aaa5bc;font-size:12px;line-height:1.6}
+footer{text-align:center;padding:25px 15px;color:#6e687e;font-size:11px;border-top:1px solid #211a32}
+@media(min-width:600px){h1{font-size:55px}.hero{padding:75px 20px 55px}.games{grid-template-columns:repeat(4,minmax(0,1fr))}.card{min-height:170px}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">HEXO<span style="color:white"> GAME</span></div>
+<button class="login" onclick="alert('Üyelik sistemi sonraki aşamada eklenecek!')">Giriş Yap</button>
+</header>
+<section class="hero">
+<div class="tag">◆ YENİ NESİL OYUN DÜNYASI ◆</div>
+<h1>OYUNA KATIL.<br><span>LİDERLİĞE YÜKSEL.</span></h1>
+<p>Şansını dene, puanlarını biriktir ve liderlik tablosunda yerini almaya hazırlan!</p>
+<a href="#games" class="button">OYUNLARI KEŞFET ↗</a>
+</section>
+<section class="section" id="games">
+<h2 class="heading">OYUN <span>MERKEZİ</span></h2>
+<div class="games">
+<div class="card"><div class="icon">🎲</div><h3>Zar Oyunu</h3><p>Tahminini yap ve şansını dene.</p><span class="badge">YAKINDA</span></div>
+<div class="card"><div class="icon">🪙</div><h3>Yazı Tura</h3><p>Kararını ver, sonucu gör.</p><span class="badge">YAKINDA</span></div>
+<div class="card"><div class="icon">🎰</div><h3>Slot Makinesi</h3><p>Sembolleri eşleştirmeyi dene.</p><span class="badge">YAKINDA</span></div>
+<div class="card"><div class="icon">🎡</div><h3>Çarkıfelek</h3><p>Çarkı döndür, sonucu keşfet.</p><span class="badge">YAKINDA</span></div>
+</div>
+<div class="notice">ℹ️ Bu platform sanal puanlı eğlence amacıyla tasarlanmaktadır. Gerçek para yatırma veya para çekme özelliği bulunmaz.</div>
+</section>
+<footer>HEXO GAME © 2026 · SANAL PUANLI OYUN PLATFORMU</footer>
+</body>
+</html>
